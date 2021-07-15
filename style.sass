@@ -1,3 +1,4 @@
+
 $SiteColor: #f16d7f
 $marginDetails: 93px
 $detailsMargin: 134px
@@ -430,7 +431,11 @@ body
 
 .BChoiseCard:hover .BCAdd
     display: flex
-
+.BCAdd:hover
+    box-shadow: 0px 0px 10px 7px white,
+inset 0px 0px 83px 92px rgba(255, 255, 255, 0.00)
+.BChoiseIMG
+    transition: filter 0.3s
 .BChoiseCard:hover .BChoiseIMG
     filter: brightness(50%)
 
@@ -452,9 +457,9 @@ body
     vertical-align: middle
     z-index: 1
     align-items: center
+    text-decoration: none
     &Text
         margin-left: 8px
-
 .blackback
     background-color: #3a3838
     opacity: 0.8
@@ -1099,6 +1104,7 @@ textarea:focus, input:focus
     text-align: center
     line-height: 50px
     margin-top: 38px
+    transition: all 0.8s
 
 ul
     list-style-type: none
@@ -1115,7 +1121,7 @@ ul
 .buttonForm:hover
     color: $SiteColor
     border-color: $SiteColor
-
+    transform: rotate(360deg)
 .bigFormHeader
     color: #222222
     font-family: Lato
@@ -1200,8 +1206,10 @@ ul
     text-align: left
     display: block
     text-decoration: none
+    transition: color 0.3s, transform 0.3s
 .rightBottomFlex:hover
     color: $SiteColor
+    transform: scale(1.3)
 .otherHR
     border: 1px solid #e8e8e8
     border-top: none
@@ -1618,7 +1626,7 @@ ul
     .button
         border: 1px solid #eaeaea
         padding: 20px 40px
-        color: #4a4a4a
+        color: #4a4a4as
         font-family: Lato
         font-size: 14px
         font-weight: 700
@@ -1744,5 +1752,5 @@ ul
     text-decoration: none
 .actionButton:hover
     color: $SiteColor
-
     display: block
+@import "_product.sass"
