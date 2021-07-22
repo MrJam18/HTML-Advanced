@@ -10,6 +10,19 @@ body {
   padding-right: 0;
 }
 
+.button {
+  font-family: Lato;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
+  color: #4a4a4a;
+}
+
+.button:hover {
+  color: #f16d7f;
+  border-color: #f16d7f;
+}
+
 .shadowBlock {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.17);
 }
@@ -28,7 +41,7 @@ body {
 .MyAccount {
   display: flex;
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .logoText {
@@ -148,14 +161,23 @@ body {
   margin-left: 349px;
   height: 29px;
   margin-top: 8px;
+  filter: grayscale(100%);
+  cursor: pointer;
+}
+
+.basket:hover {
+  filter: none;
+}
+
+summary {
+  cursor: pointer;
 }
 
 .buttonAccaunt {
   margin-left: 26px;
   width: 130px;
   height: 38px;
-  background-color: #f16d7f;
-  color: #ffffff;
+  color: #4a4a4a;
   font-family: Lato;
   font-size: 15px;
   font-weight: 400;
@@ -163,10 +185,11 @@ body {
   letter-spacing: normal;
   line-height: 32px;
   text-align: center;
-  display: flex;
+  display: flex !important;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  text-decoration: none;
+  border-radius: 3px;
 }
 
 .myAccou {
@@ -213,11 +236,16 @@ body {
   background-color: #ffffff;
   position: absolute;
   padding-bottom: 20px;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease;
+  display: flex;
+  z-index: 3;
 }
 
 .menuLink:hover .megaMenu {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
 }
 
 .megaMenu:before {
@@ -227,7 +255,7 @@ body {
   height: 6px;
   position: absolute;
   top: -5px;
-  left: 38px;
+  left: 17px;
   transform: rotate(45deg);
   color: #fff;
   border-left: 1px solid #e6e6e6;
@@ -236,13 +264,17 @@ body {
 }
 
 .lastMegaMenu {
-  right: 0;
+  right: 244px;
   left: auto;
+}
+
+.lastMegaMenu_featured::before {
+  right: 177px !important;
 }
 
 .lastMegaMenu:before {
   left: auto;
-  right: 300px;
+  right: 75px;
 }
 
 .megaHeader {
@@ -305,7 +337,11 @@ body {
 .smileBoy {
   background-image: url(img/smileBoy.png);
   height: 614px;
+}
+
+.mainFlex {
   display: flex;
+  padding-top: 209px;
 }
 
 .mainText {
@@ -320,7 +356,6 @@ body {
   text-align: left;
   text-transform: uppercase;
   margin-left: 12px;
-  margin-top: 209px;
 }
 
 .luxerious {
@@ -344,7 +379,7 @@ body {
   width: 12px;
   height: 92px;
   background-color: #f16d7f;
-  margin-top: 224px;
+  margin-top: 10.5px;
 }
 
 .promo {
@@ -395,6 +430,9 @@ body {
 
 .promoBlock {
   position: relative;
+  display: block;
+  text-decoration: none;
+  color: #222222;
 }
 
 .promoText {
@@ -525,6 +563,7 @@ body {
   z-index: 1;
   align-items: center;
   text-decoration: none;
+  transition: box-shadow 0.3s;
 }
 
 .BCAddText {
@@ -647,8 +686,9 @@ body {
 .subscribe {
   background-image: url(img/Layer_41.png);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
   margin-top: 93px;
+  background-size: 100%;
 }
 
 .subscribeText {
@@ -689,8 +729,6 @@ body {
 .leftSubscribeBottom {
   margin-left: 114px;
   margin-top: 19px;
-  width: 84px;
-  height: 27px;
   color: #f16d7f;
   font-family: Lato;
   font-size: 16px;
@@ -700,6 +738,22 @@ body {
   text-align: left;
   letter-spacing: 0.4px;
   line-height: 26px;
+}
+
+.subscribeChooser {
+  display: flex;
+  margin-top: 41px;
+}
+
+.subscribeSelector {
+  width: 38px;
+  height: 4px;
+  background-color: #d6d6d6;
+  margin-right: 13px;
+}
+
+.subscribeSelector_pink {
+  background-color: #f16d7f;
 }
 
 .NameSubscribe {
@@ -717,6 +771,13 @@ body {
   height: 438px;
   background-color: #ffffff;
   margin-left: 72px;
+}
+
+.subscribeForm {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  margin-top: 35px;
 }
 
 .rSubscribeHeader {
@@ -755,14 +816,13 @@ body {
   background-color: #e1e1e1;
   border: 0;
   margin-left: 92px;
-  margin-top: 35px;
   padding-left: 28px;
 }
 
 .rSubscribeButton {
   border-radius: 0 23px 23px 0;
   background-color: #f16d7f;
-  width: 104px;
+  width: 102px;
   height: 46px;
   border: 0;
   margin-left: -65px;
@@ -772,11 +832,11 @@ body {
   font-weight: 400;
   font-style: normal;
   letter-spacing: normal;
-  line-height: 54px;
+  line-height: 46px;
   text-align: center;
   font-style: normal;
   letter-spacing: 0.35px;
-  line-height: normal;
+  border: none !important;
 }
 
 .footerText {
@@ -962,6 +1022,7 @@ body {
   text-align: left;
   text-decoration: none;
   display: block;
+  transition: color 0.2s;
 }
 
 .hrBrowseMenu {
@@ -1012,7 +1073,7 @@ details > summary {
   border: 1px solid #e6e6e6;
   padding: 20px 17px;
   position: absolute;
-  right: -60px;
+  right: -215px;
   left: auto;
   top: 50px;
 }
@@ -1024,7 +1085,7 @@ details > summary {
   height: 6px;
   position: absolute;
   top: -5px;
-  left: 38px;
+  left: 37px;
   transform: rotate(45deg);
   color: #fff;
   border-left: 1px solid #e6e6e6;
@@ -1164,7 +1225,6 @@ details > summary {
 }
 
 .textAccount {
-  color: #ffffff;
   font-family: Lato;
   font-size: 15px;
   font-weight: 400;
@@ -1215,6 +1275,7 @@ textarea:focus, input:focus {
   line-height: 20px;
   text-align: center;
   text-transform: uppercase;
+  transition: color 0.2s;
 }
 
 .ancorArrivals:hover {
@@ -2138,11 +2199,32 @@ ul {
 
 .actionButton {
   text-decoration: none;
+  transition: color 0.2s;
 }
 
 .actionButton:hover {
   color: #f16d7f;
   display: block;
+}
+
+.button_background {
+  color: #4a4a4a;
+  border: 1px solid #f16d7f;
+  background-color: #f16d7f;
+  color: #ffffff;
+  display: block;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.button_background:hover {
+  background-color: #fff;
+  color: #f16d7f;
+  border-color: #f16d7f;
+}
+
+.ancor {
+  transition: color 0.2s, background 0.2s;
 }
 
 .offerText_product {
@@ -2478,6 +2560,7 @@ select {
 .imgBlock:hover .BCAdd {
   display: flex;
   color: #fff;
+  transition: box-shadow 0.3s;
 }
 
 .imgBlock:hover .imgBackground {
@@ -2497,6 +2580,7 @@ select {
   height: 280px;
   background-color: #e9e9e9;
   margin: 0 auto;
+  transition: filter 0.3s;
 }
 
 .productIMG {
@@ -2611,32 +2695,22 @@ select {
   color: #c4c4c4;
 }
 
-.button {
-  color: #c4c4c4;
-  font-family: Lato;
-  font-size: 16px;
-  font-weight: bold;
-  font-style: normal;
-  letter-spacing: normal;
-  line-height: 26px;
-  text-align: center;
-  border-radius: 3px;
-  border: 1px solid #c4c4c4;
-  text-decoration: none;
-}
-
-.button:hover {
-  color: #f16d7f;
-  border-color: #f16d7f;
-}
-
 .button_product {
   width: 150px;
   height: 44px;
-  line-height: 44px;
+  line-height: 44px !important;
+  color: #c4c4c4;
+  font-size: 16px;
+  border: 1px solid #c4c4c4;
+  border-radius: 3px;
+  line-height: 26px;
 }
 
 .page-item {
   height: 100%;
+}
+
+.link:hover {
+  color: #f16d7f;
 }
 /*# sourceMappingURL=style.css.map */
